@@ -1,0 +1,52 @@
+<html>
+	<head>
+	<link rel="stylesheet" href="./bookreg.css" />
+    <title>Home Service Management System</title>
+  <link rel="shortcut icon" href="./short icon.png" type="image/x-icon">
+	</head>
+<body>
+<nav>
+      <<div class="section__container nav__links">
+        <h1>HOME SERVICE</h1>
+        <span><a href="index.html">Home</a></li></span>
+        <span><a href="booking.html">Booking</a></li></span>
+        <span><a href="reg.html">Worker registration</a></li></span>
+        <span><a href="service.html">Services</a></li></span>
+        <span><a href="adminlogin.html">Admin Log-in</a></li></span>
+        <span><a href="about.html">About Us</a></li></span>
+        <span><a href="contact.html">Contact Us</a></li></span>   
+      </div>
+    </nav>
+<center><h1>Required Services Details</h1></center>
+<br>
+<br>
+	<table align="center" border="1">
+		<form action="services2.php" method="post">
+		<tr align="center">
+		<td>Select Your District</td>
+		<td><select name="dis">			<!--Displaying District Name From The Data-Base-->
+				<?php
+					$con=mysqli_connect("localhost", "root", "","home");
+					$sql="select district from tamilnadu";
+					$result=mysqli_query($con,$sql);
+					while($row=mysqli_fetch_array($result))
+					{
+					$s=$row[0];
+					echo"<option value=".$s.">".$s."</option>";
+					}
+				?>
+				</select>
+		</td>
+		</tr></table>
+	<center><table>
+		<tr>
+		
+		<td><button class="button" type="submit" name="view">View</button></td>
+       </tr>
+		
+		
+
+		</form>
+	</table></center>
+</body>
+</html>

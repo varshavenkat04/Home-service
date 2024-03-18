@@ -1,0 +1,41 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .section__container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 5rem 1rem;
+  }
+  a {
+    text-decoration: none;
+  }
+  nav {
+    background-color: #f59e1d;
+  }
+  .nav__links {
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .nav__links a {
+    font-size: 0.9rem;
+    color: white;
+    transition: 0.3s;
+  }
+  
+  .nav__links a:hover {
+    color:#fbbf24;
+  }
+  
+  .nav__links i {
+    font-size: 1.2rem;
+  }  

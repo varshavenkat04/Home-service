@@ -1,0 +1,114 @@
+<html>
+	<head>
+	<link rel="stylesheet" href="admin.css"/>
+    <title>Home Service Management System</title>
+  <link rel="shortcut icon" href="./short icon.png" type="image/x-icon">
+		
+	</head>
+<body>
+<nav>
+      <div class="section__container nav__links">
+
+        <h1>HOME SERVICE</h1>
+        <span><a href="index.html">Home</a></li></span>
+        <span><a href="booking.html">Booking</a></li></span>
+        <span><a href="reg.html">Worker registration</a></li></span>
+        <span><a href="service.html">Services</a></li></span>
+        <span><a href="adminlogin.html">Admin Log-in</a></li></span>
+        <span><a href="about.html">About Us</a></li></span>
+        <span><a href="contact.html">Contact Us</a></li></span>   
+      </div>
+    
+    </nav> <br>
+		<center><h1>BOOKING </h1></center>
+	<table border="1" align="center">
+		<form action="" method="post">
+	<tr align="center">
+		<td> Name </td>
+		<td><input type="text" name="name" placeholder="jhone"/></td>
+	</tr>
+    <tr align="center">
+		<td>Gender </td>
+		<td> <input type="radio" name="gender" value="Male" />Male <input type="radio" name="gender" value="Female"  />Female </td>
+	</tr>
+	<tr align="center">
+		<td>Address </td>
+		<td> <input type="text" name="add1" placeholder="Address line 1" /></td>
+	</tr>
+	<tr align="center">
+		<td>Address </td>
+		<td> <input type="text" name="add2" placeholder="Address line 2" /></td>
+	</tr>
+    <tr align="center">
+		<td>State</td>
+		<td> <input type="text" name="state" placeholder="india"/></td>
+	</tr>
+    <tr align="center">
+		<td>Select Your District</td>
+		<td><select name="disct">			<!--Displaying District Name From The Data-Base-->
+				<?php
+					$con=mysqli_connect("localhost", "root", "","home");
+					$sql="select district from tamilnadu";
+					$result=mysqli_query($con,$sql);
+					while($row=mysqli_fetch_array($result))
+					{
+					$s=$row[0];
+					echo"<option value=".$s.">".$s."</option>";
+					}
+				?>
+			</select>
+		</td>
+	</tr>
+    <tr align="center">
+		<td>Pincode</td>
+		<td><input type="text" name="pin" placeholder="123456"></td>
+	</tr>
+	<tr align="center">
+	<td>Phone Number</td>
+	<td><input type="text" name="pho" placeholder="1234567892"/></td>
+	</tr>
+    <tr align="center">
+		<td>Select Your Service</td>
+		<td><select name="ser">			<!--Displaying Services Name From The Data-Base-->
+				<?php
+					$con=mysqli_connect("localhost", "root", "","home");
+					$sql="select service from services";
+					$result=mysqli_query($con,$sql);
+					while($row=mysqli_fetch_array($result))
+					{
+					$s=$row[0];
+					echo"<option value=".$s.">".$s."</option>";
+					}
+				?>
+			</select>
+		</td>
+	</tr>
+	<tr align="center">
+		<td>Appoinment Date</td>
+		<td> <input type="date" name="date" placeholder=""/></td>
+	</tr>
+	<tr align="center">
+		<td>Hours</td>
+		<td> <select name="hrs" size="1">
+		<option value="1-2" selected="selected">1-2</option>
+		<option value="2-4">2-4</option>
+		<option value="4-6">4-6</option>
+		<option value="6-12">6-12</option>
+		<option value="0-1">lessthan 1 hour</option></select></td>
+	</tr>
+    <tr align="center">
+		<td>E-mail ID</td>
+		<td><input type="text" name="mail" placeholder="example@gmail.com"></td>
+	</tr>
+	<table align="center">
+	<tr >
+	<td><button class="button" type="submit" name="sub">Submit</button></td>
+	</tr>
+	
+		</form>
+	</table>
+
+    
+
+</body>
+</html>
